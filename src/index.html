@@ -1,15 +1,52 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
   <title>Stencil Component Starter</title>
-  <script src="/build/mycomponent.js"></script>
+  <script src="/build/image-gallery.js"></script>
+  <style>
+    body {
+        font-family: 'Roboto', 'Noto', sans-serif;
+    }
 
+    image-gallery {
+        --stage-border: 0;
+        --stage-width: 560px;
+        --stage-height: 315px;
+    }
+</style>
 </head>
+
 <body>
 
-  <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>
+  <image-gallery activitytitle="This is my component yeah">
+    <figure slot="items" hidden>
+      <img src="images/photo1.jpg" alt="alt text">
+      <figcaption>caption text 1</figcaption>
+    </figure>
+    <figure slot="items" hidden>
+      <p>This is a paragraph with some text</p>
+    </figure>
+    <figure slot="items" hidden>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/XQOjBwcTyG8" frameborder="0" allow="autoplay; encrypted-media"
+        allowfullscreen></iframe>
+    </figure>
+    <figure slot="items" hidden>
+      <img src="images/photo2.jpg" alt="alt text">
+      <figcaption>caption text 2</figcaption>
+    </figure>
+    <figure slot="items" hidden>
+      <img src="images/photo3.jpg" alt="alt text">
+      <figcaption>caption text 3</figcaption>
+    </figure>
+    <figure slot="items" hidden>
+      <img src="images/photo4.jpg" alt="alt text">
+      <figcaption>caption text 4</figcaption>
+    </figure>
+  </image-gallery>
 
 </body>
+
 </html>

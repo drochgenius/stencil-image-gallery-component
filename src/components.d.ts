@@ -29,33 +29,37 @@ declare global {
 declare global {
 
   namespace StencilComponents {
-    interface MyComponent {
-      'first': string;
-      'last': string;
+    interface ImageGallery {
+      'activityTitle': string;
+      'autoPlay': boolean;
+      'count': number;
+      'position': number;
     }
   }
 
-  interface HTMLMyComponentElement extends StencilComponents.MyComponent, HTMLStencilElement {}
+  interface HTMLImageGalleryElement extends StencilComponents.ImageGallery, HTMLStencilElement {}
 
-  var HTMLMyComponentElement: {
-    prototype: HTMLMyComponentElement;
-    new (): HTMLMyComponentElement;
+  var HTMLImageGalleryElement: {
+    prototype: HTMLImageGalleryElement;
+    new (): HTMLImageGalleryElement;
   };
   interface HTMLElementTagNameMap {
-    'my-component': HTMLMyComponentElement;
+    'image-gallery': HTMLImageGalleryElement;
   }
   interface ElementTagNameMap {
-    'my-component': HTMLMyComponentElement;
+    'image-gallery': HTMLImageGalleryElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      'my-component': JSXElements.MyComponentAttributes;
+      'image-gallery': JSXElements.ImageGalleryAttributes;
     }
   }
   namespace JSXElements {
-    export interface MyComponentAttributes extends HTMLAttributes {
-      'first'?: string;
-      'last'?: string;
+    export interface ImageGalleryAttributes extends HTMLAttributes {
+      'activityTitle'?: string;
+      'autoPlay'?: boolean;
+      'count'?: number;
+      'position'?: number;
     }
   }
 }

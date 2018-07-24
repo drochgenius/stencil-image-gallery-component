@@ -1,0 +1,30 @@
+@import "../../../node_modules/@material/button/dist/mdc.button.css";
+
+h3, nav {
+    margin: 0.5em 0;
+    text-align: center;
+    width: var(--stage-width, 640px);
+}
+
+.carousel {
+    align-items: center;
+    display: flex;
+    transition: margin-left 1s ease-in-out;
+}
+
+::slotted(figure) {
+    height: var(--stage-height, 320px);
+    margin: 0;
+    min-width: var(--stage-width, 640px);
+    overflow: hidden;
+    padding: auto;
+    text-align: center;
+}
+
+.stage {
+    background: var(--stage-background, transparent);
+    border: var(--stage-border, 1px solid gray);
+    height: var(--stage-height, 320px);
+    overflow: hidden;
+    width: var(--stage-width, 640px);
+}

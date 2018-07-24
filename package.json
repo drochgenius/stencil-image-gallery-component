@@ -11,11 +11,13 @@
   ],
   "scripts": {
     "build": "stencil build",
-    "start": "stencil build --dev --watch --serve",
+    "start": "mkdir -p www && cp -R images www && stencil build --dev --watch --serve",
     "test": "jest",
     "test.watch": "jest --watch"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@material/button": "^0.37.1"
+  },
   "devDependencies": {
     "@stencil/core": "^0.10.0",
     "@types/jest": "^21.1.1",
