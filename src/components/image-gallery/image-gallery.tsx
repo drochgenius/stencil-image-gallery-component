@@ -3,17 +3,17 @@ import { Component, Element, Prop } from '@stencil/core';
 const DEFAULT_DELAY: number = 2000;
 const DEFAULT_STAGE_WIDTH: string = '640px';
 
-declare global  {
+declare global {
   namespace JSX {
-      interface IntrinsicElements {
-          slot: JSXElements.SlotAttributes;
-      }
+    interface IntrinsicElements {
+      slot: JSXElements.SlotAttributes;
+    }
   }
   namespace JSXElements {
-      interface SlotAttributes {
-          name?: string;
-          onSlotchange?: any;
-      }
+    interface SlotAttributes {
+      name?: string;
+      onSlotchange?: any;
+    }
   }
 }
 
@@ -36,7 +36,7 @@ export class ImageGallery {
 
   public get stageWidth(): string {
     return getComputedStyle(this.imageGalleryEl).getPropertyValue('--stage-width') || DEFAULT_STAGE_WIDTH;
-    }
+  }
 
   public get styles(): string {
     return `.carousel { margin-left: ${-this.position * parseInt(this.stageWidth)}px; }`;
@@ -98,13 +98,13 @@ export class ImageGallery {
           </div>
         </section>
         <nav>
-          <button class="mdc-button" onClick={() => this.prev()}>
+          <button class="mdc-button" disabled={this.position <= 0} onClick={() => this.prev()}>
             previous
           </button>
           <span>
             {posIndex} of {this.count}
           </span>
-          <button class="mdc-button" onClick={() => this.next()}>
+          <button class="mdc-button" disabled={this.position >= this.count - 1} onClick={() => this.next()}>
             next
           </button>
         </nav>
